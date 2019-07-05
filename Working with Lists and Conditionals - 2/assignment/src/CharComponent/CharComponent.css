@@ -1,0 +1,16 @@
+.CharComponent {
+  display: inline-block;
+  padding: 16px;
+  text-align: center;
+  margin: 16px;
+  border: 1px solid black;
+  font-size: 18px;
+  font-weight: 700;
+}
+.CharComponent ul {
+  padding: 0 20px 0 20px;
+}
+
+.CharComponent li {
+  list-style: none;
+}
