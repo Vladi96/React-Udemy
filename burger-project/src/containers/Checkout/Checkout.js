@@ -8,9 +8,13 @@ import ContactData from "./ContactData/ContactData";
 class Checkout extends Component {
   componentDidMount() {
     if (this.props.ingredients.length < 1) {
-      this.props.history.goBack();
+      return this.props.history.push("/");
+    }
+    if (!this.props.token) {
+      return this.props.history.push("/auth");
     }
   }
+
   checkoutCencelHandler = () => {
     this.props.history.goBack();
   };
@@ -42,8 +46,9 @@ class Checkout extends Component {
 }
 
 const mapStateToProps = state => ({
-  ingredients: state.ingredients,
-  price: state.totalPrice
+  ingredients: state.ingredients.ingredients,
+  price: state.ingredients.totalPrice,
+  token: state.users.token
 });
 
 export default connect(mapStateToProps)(Checkout);

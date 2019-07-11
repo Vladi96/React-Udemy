@@ -38,9 +38,12 @@ const reducer = (state = initialState, action) => {
         totalPrice: Number(totalPrice),
         ingredients: newIngredients
       };
-
+    case "REMOVE_ALL_ING":
+      return {
+        ...initialState
+      };
     default:
-      return state;
+      return { ...state };
   }
 };
 

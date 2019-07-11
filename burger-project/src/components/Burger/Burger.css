@@ -1,23 +1,17 @@
 .Burger {
   text-align: center;
-  width: 100%;
+  width: 30vw;
   margin: auto;
-  height: 250px;
+  height: 40vh;
+  margin: 5vh auto;
   overflow: overlay;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.2em;
 }
 
-@media (min-width: 500px) and (min-height: 400px) {
+@media (max-width: 600px) {
   .Burger {
-    width: 350px;
-    height: 300px;
-  }
-}
-
-@media (min-width: 1000px) and (min-height: 700px) {
-  .Burger {
-    width: 700px;
-    height: 600px;
+    width: 50vw;
+    font-size: 1em;
   }
 }

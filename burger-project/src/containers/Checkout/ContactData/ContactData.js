@@ -107,17 +107,20 @@ class ContactData extends Component {
     for (const key in orderData) {
       order[key] = orderData[key].value;
     }
+
     order["price"] = this.props.total;
     order["ingredients"] = this.props.ingredients;
+    order["userId"] = this.props.userId;
 
     axios
-      .post("/orders.json", order)
+      .post("/orders.json?auth=" + this.props.token, order)
       .then(res => {
         this.setState({
           spinerLoading: false,
           purchasing: false
         });
         this.props.history.push("/");
+        this.props.removeIngredients();
       })
       .catch(err => this.setState({ spinerLoading: false }));
   };
@@ -161,8 +164,20 @@ class ContactData extends Component {
 }
 
 const mapStateToProps = state => ({
-  total: state.totalPrice,
-  ingredients: state.ingredients
+  total: state.ingredients.totalPrice,
+  ingredients: state.ingredients.ingredients,
+  token: state.users.token,
+  userId: state.users.userId
 });
 
-export default connect(mapStateToProps)(withRouter(ContactData));
+const mapDispatchToProps = dispatch => ({
+  removeIngredients: () =>
+    dispatch({
+      type: "REMOVE_ALL_ING"
+    })
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(ContactData));

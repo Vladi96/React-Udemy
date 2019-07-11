@@ -1,0 +1,39 @@
+.Auth {
+  width: 40%;
+  margin: 20vh auto;
+  box-shadow: 0px 0px 111px 45px rgba(145, 145, 145, 1);
+  padding: 5vh;
+}
+
+.Sign {
+  font-weight: bold;
+  color: #981;
+  font-size: 1.3rem;
+  box-sizing: border-box;
+  display: block;
+}
+
+.Error-info {
+  font-weight: 600;
+  color: #ff0000;
+  box-shadow: inset 0px 9px 5px 0px rgba(173, 173, 173, 0.23);
+  padding: 15px;
+  font-size: 1.1rem;
+  border: 1px solid rgba(206, 199, 199, 0.63);
+  box-sizing: border-box;
+  display: block;
+}
+
+@media (min-width: 900px) {
+  .Auth {
+    width: 400px;
+  }
+}
+
+@media (max-width: 630px) {
+  .Auth {
+    padding: 1vw;
+    width: 70vw;
+    font-size: 1em;
+  }
+}

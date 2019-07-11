@@ -55,8 +55,8 @@ const input = props => {
 
   return (
     <div className="Input">
-      <label className="Label">{props.label}</label>
       {inputElement}
+      <label className="Input_info">{props.label}</label>
     </div>
   );
 };

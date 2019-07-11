@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+}
+
+.NotFound {
+  /* font-family: "Fira Sans", sans-serif; */
+  color: #fafafa;
+}
+
+.Background-NotFound {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(#0c0e10, #446182);
+}
+.Background-NotFound .Ground-NotFound {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 20vh;
+  background: #0b1825;
+}
+
+.Container-NotFound {
+  position: relative;
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.Left-section-NotFound,
+.Right-section-NotFound {
+  width: 50vw;
+}
+.Left-section-NotFound {
+  color: #e9e9e9;
+  text-shadow: 0 0 0.8rem #ff6f6fa9;
+  padding: 0 1vw;
+}
+
+@media (max-width: 601px) {
+  .Inner-content-NotFound {
+    font-size: 0.8em;
+  }
+  .Left-section-NotFound {
+    position: absolute;
+    right: 0;
+  }
+  .Right-section-NotFound {
+    position: relative;
+    left: 0;
+  }
+}
+
+.Svgimg-NotFound {
+  position: absolute;
+  bottom: 10vh;
+  right: 5vw;
+  height: 60vh;
+}
+
+@media (max-width: 420px) {
+  .Svgimg-NotFound {
+    right: 10vw;
+    height: 40vh;
+    bottom: 15vh;
+  }
+  .Inner-content-NotFound {
+    font-size: 0.6em;
+  }
+}
+
+@media (max-height: 420px) {
+  .Left-section-NotFound {
+    left: 0;
+  }
+  .Right-section-NotFound {
+    position: unset;
+  }
+  .Svgimg-NotFound {
+    bottom: 20vh;
+  }
+  .Inner-content-NotFound {
+    font-size: 0.7em;
+  }
+}
+
+.Heading-NotFound {
+  text-align: center;
+  font-size: 6em;
+  line-height: 1.3em;
+  margin: 0 auto;
+  padding: 0;
+}
+.Subheading-NotFound {
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+.Svgimg-NotFound .Bench-legs-NotFound {
+  fill: #0c0e10;
+}
+.Svgimg-NotFound .Top-bench-NotFound,
+.Svgimg-NotFound .Bottom-bench-NotFound {
+  stroke: #0c0e10;
+  stroke-width: 1px;
+  fill: #5b3e2b;
+}
+.Svgimg-NotFound .Bottom-bench-NotFound path:nth-child(1) {
+  fill: #432d20;
+}
+.Svgimg-NotFound .Lamp-details-NotFound {
+  fill: #202425;
+}
+.Svgimg-NotFound .Lamp-accent-NotFound {
+  fill: #2c3133;
+}
+.Svgimg-NotFound .Lamp-bottom-NotFound {
+  fill: linear-gradient(#202425, #0c0e10);
+}
+.Svgimg-NotFound .Lamp-light-NotFound {
+  fill: #ffffff;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 1rem #fefefe;
+  }
+  50% {
+    text-shadow: 0 0 1.85rem #ededed;
+  }
+  100% {
+    text-shadow: 0 0 1rem #fefefe;
+  }
+}

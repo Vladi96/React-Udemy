@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import Order from "../../components/Order/Order";
 import axios from "axios";
 
@@ -8,21 +9,28 @@ class Orders extends Component {
   };
 
   componentDidMount() {
+    if (!this.props.token) {
+      return this.props.history.push("/");
+    }
     axios
-      .get("/orders.json")
+      .get("/orders.json?auth=" + this.props.token)
       .then(res => {
         let arrayOfOrder = [];
-        for (const key in res.data) {
-          arrayOfOrder.push({
-            id: key,
-            ...res.data[key]
-          });
-        }
 
+        for (const key in res.data) {
+          if (res.data[key].userId === this.props.userId) {
+            arrayOfOrder.push({
+              id: key,
+              ...res.data[key]
+            });
+          }
+        }
+        arrayOfOrder.reverse();
         this.setState({ orders: arrayOfOrder });
       })
       .catch(err => {});
   }
+
   render() {
     let orders = [];
     this.state.orders.forEach(order => {
@@ -39,4 +47,9 @@ class Orders extends Component {
   }
 }
 
-export default Orders;
+const mapStateToProps = state => ({
+  token: state.users.token,
+  userId: state.users.userId
+});
+
+export default connect(mapStateToProps)(Orders);
